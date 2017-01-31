@@ -5,19 +5,16 @@ public void setup()
 }
 public void draw()
 {
-	myFractal(150,150,40);
+	myFractal(200,200,200);
 }
-public void myFractal(int x, int y, int a)
+public void myFractal(float x, float y, float a)
 {
-	//center at (x+a)/2 and (y+a)/2
-	rect(x,y,a,a);
-	if (a <= 20)
+	ellipse(x,y,a,a);
+	if (a > 10)
 	{
-		myFractal(x-a/2,y,a);
-		myFractal(x+a/2,y,a);
-	}
-	else
-	{
-		myFractal(x-a/4,y,a/2);
+		myFractal(x-a/8.0,y,a/1.2);
+		myFractal(x+a/8.0,y,a/1.2);
+		// myFractal(x,y-a/8.0,a/1.2);
+		// myFractal(x,y+a/8.0,a/1.2);
 	}
 }
